@@ -1,0 +1,8 @@
+version: "3.8"
+services:
+  app:
+    build:
+      context: C:\Users\ASUS\Desktop\ML_Case
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
