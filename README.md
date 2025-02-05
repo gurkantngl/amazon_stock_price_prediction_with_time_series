@@ -1,25 +1,32 @@
 # Stock Price Prediction API
 
-First, install the required libraries:
+## Projenin Amacı
+Bu proje, Amazon'un hisse senedi fiyatlarını zaman serisi analizi kullanarak tahmin etmeyi amaçlamaktadır. Hedef, geçmiş hisse senedi verilerini kullanarak gelecekteki fiyatları tahmin edebilen bir model oluşturmaktır.
 
+## Kullanılan Teknolojiler
+- Python
+- Jupyter Notebook
+- FastAPI
+- Docker
+- NLP ve makine öğrenimi algoritmaları
+
+## Gereksinimler
+İlk olarak, gerekli kütüphaneleri yükleyin:
+```sh
 pip install -r requirements.txt
+```
 
-
-
-Run the API:
-
+API'yi başlatmak için:
 uvicorn main:app --reload
 
-
-Test the API:
-
-curl -X POST "http://localhost:8000/forecast" -H "accept: application/json" -H "Content-Type: application/json" -d
-
-  '{"days" : 7}'
+API'yi test etmek için:
+```sh
+curl -X POST "http://localhost:8000/forecast" -H "accept: application/json" -H "Content-Type: application/json" -d '{"days" : 7}'
+```
 
 
+Sonuçları İnceleme
 
-Review the Results:
 
 {
     "forecast": [
@@ -43,14 +50,12 @@ Review the Results:
 }
 
 
+Docker ile Çalıştırma:
+```sh
+docker build -t my-fastapi-app .
+```
 
-
-
-# Run with Docker
-
-Build:
-docker build -t my-fastapi-app . 
-
-
-Run:
+Run
+```sh
 docker run -p 8000:8000 my-fastapi-app
+```
